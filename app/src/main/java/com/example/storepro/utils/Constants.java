@@ -7,7 +7,7 @@ public class Constants {
 
     public static Boolean isBackHome = false;
     //真机模拟
-    public static final String BASE = "http://172.20.10.2:8080";
+    public static final String BASE = "http://192.168.31.100 :8000";
     //模拟器
     //public static final String BASE = "http://192.168.0.102:8080";
     // 请求 Json 数据基本 URL
