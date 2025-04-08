@@ -1,0 +1,228 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/super_light_gray"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:text="Me"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <!-- 头像昵称信息 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:src="@drawable/goodshow1"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp" />
+
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/corner_btn"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="Login/Register"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/idUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text=""
+                android:textSize="18sp"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <!-- 订单功能栏 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_cart_item"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Orders"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/idAllOrder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All >"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_wait_pay"
+                    android:gravity="center"
+                    android:text="Processing"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_wait_send"
+                    android:gravity="center"
+                    android:text="Shipping"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_wait_get"
+                    android:gravity="center"
+                    android:text="Delivering"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_wait_comment"
+                    android:gravity="center"
+                    android:text="Delivered"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_wait_service"
+                    android:gravity="center"
+                    android:text="售后"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 个人信息 -->
+        <LinearLayout
+            android:id="@+id/idUserInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/corner_cart_item"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=">"
+                android:textColor="@color/dark_gray"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- 地址信息 -->
+        <LinearLayout
+            android:id="@+id/idUserAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/corner_cart_item"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address book"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=">"
+                android:textColor="@color/dark_gray"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/idLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/corner_btn"
+            android:text="Logout"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

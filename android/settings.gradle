@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        maven { url "https://s01.oss.sonatype.org/content/groups/public"}
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+rootProject.name = "Diploma_Project"
+include ':app'

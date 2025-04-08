@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!-- hhh 单个商品展示 -->
+
+    <!-- 状态栏 占位 -->
+    <LinearLayout
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="invisible"></LinearLayout>
+
+    <!-- 返回&标题 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageButton
+            android:id="@+id/idBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/super_light_gray"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Product Details"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- show good image -->
+            <ImageView
+                android:id="@+id/idSingleGoodImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxHeight="370dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/goodshow1" />
+            <!-- good information -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/corner_cart_item"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/idSingleGoodName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="2"
+                    android:maxLines="2"
+                    android:text="超级无敌热销商品超级无敌热销商品超级无敌热销商品超级无敌热销商品"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/idSingleGoodPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥19.9"
+                    android:textColor="@color/orange"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="sold：200+"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <!-- good 规格 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/corner_cart_item"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="规格：默认#"
+                    android:visibility="invisible" />
+            </LinearLayout>
+            <!-- good comment -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/corner_cart_item"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="reviews(119)"
+                        android:textColor="@color/black" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/idGoCommentBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="all"
+                        android:textColor="@color/orange" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Want to review this item? Please make a purchase first."
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_weight="1"
+        android:background="@drawable/corner_tab"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/idJoinCart"
+            android:layout_width="144dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/corner_btn"
+            android:padding="8dp"
+            android:src="@drawable/ic_cart_join_white" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <!-- 状态栏 占位 -->
+    <LinearLayout
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="invisible"></LinearLayout>
+
+    <!-- Fragment View -->
+    <FrameLayout
+        android:id="@+id/fg_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/space" />
+
+    <!-- TabBar -->
+    <LinearLayout
+        android:id="@+id/ly_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/corner_tab"
+        android:elevation="5dp"
+        android:orientation="horizontal"
+        android:paddingTop="5dp">
+        <!-- elevation : 阴影  layout_alignParentBottom : 对齐父组件底部-->
+
+        <TextView
+            android:id="@+id/txt_home"
+            style="@style/TabBar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/tab_menu_home"
+            android:drawablePadding="3dp"
+            android:text="Home" />
+
+        <TextView
+            android:id="@+id/txt_class"
+            style="@style/TabBar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/tab_menu_type"
+            android:drawablePadding="3dp"
+            android:text="Category" />
+
+        <TextView
+            android:id="@+id/txt_cart"
+            style="@style/TabBar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/tab_menu_shopcart"
+            android:drawablePadding="3dp"
+            android:text="Cart" />
+
+        <TextView
+            android:id="@+id/txt_mine"
+            style="@style/TabBar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/tab_menu_mine"
+            android:drawablePadding="3dp"
+            android:text="Mine" />
+
+    </LinearLayout>
+
+</RelativeLayout>

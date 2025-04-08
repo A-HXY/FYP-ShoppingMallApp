@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/cartTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:text="Cart"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartItemView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cartTitle"
+        android:padding="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/whiteBlock"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/allSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total："
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥"
+                android:textColor="@color/orange"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/idCartTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:textColor="@color/orange"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/idPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/corner_btn"
+                android:text="Checkout"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/whiteBlock"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white" />
+
+</RelativeLayout>
