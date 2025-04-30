@@ -169,9 +169,7 @@ public class OrderController {
     // 订单 发货
     @PostMapping("/sendOut")
     public Result sendOutGood(int oid, String freightIndex, double freightExpense) {
-        // 点击待收货 => 4为待评价
         if (orderService.finishedSendGood(oid, freightIndex, freightExpense)) {
-            // 转3 待收货
             orderService.updateOrderSendTime(oid, new Date(System.currentTimeMillis()));
             return Result.ok();
         } else

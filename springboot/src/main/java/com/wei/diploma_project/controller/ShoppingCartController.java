@@ -53,42 +53,33 @@ public class ShoppingCartController {
         double total = .0;
         for (ShoppingCartBeanExtend c : cartList) {
             total += c.getGpurchaseNumber() * c.getGood().getGprimalPrice();
-        }
-        OrderBean orderBean = new OrderBean();
+        }OrderBean orderBean = new OrderBean();
         orderBean.setUid(cartList.get(0).getUid());
         AddressBean defaultAddr = addressService.getDefaultAddr(cartList.get(0).getUid());
         if (defaultAddr != null)
             orderBean.setAddrId(defaultAddr.getAddrId());
         else
             orderBean.setAddrId(-1); // 还未有默认地址！
-        // orderBean.setAddrId(1); // 地址定死了  得改
+        // orderBean.setAddrId(1); // 地址
         orderBean.setOrderIndex(getOutTradeNo()); // 订单号
-        orderBean.setFreightIndex("###No2023"); // 快递号 定死 得改
+        orderBean.setFreightIndex("###No2023"); // 快递号
         orderBean.setOstatus(1);
         orderBean.setCreateTime(new Date());
         orderBean.setPriceTotal(total);
         orderBean.setFreightExpense(.0);
         orderBean.setPaymentMode(1);
-        /* 创建订单！ */
         if (orderService.addOrder(orderBean) > 0) {
-            /* 拿订单号 */
             int oid = orderService.getNewestOidByUid(orderBean.getUid());
             for (ShoppingCartBeanExtend c : cartList) {
-                /* 构建订单子项 */
                 OrderItem item = new OrderItem();
                 item.setOid(oid);
                 item.setGid(c.getGid());
                 item.setGpurchasePrice(c.getGood().getGprimalPrice());
                 item.setGpurchaseNumber(c.getGpurchaseNumber());
-                /* 插入子项 */
                 orderService.addOrderItem(item);
-                /* 购物车删除子项 */
                 cartService.deleteCartByCid(c.getCid());
-            }
-            return Result.ok(oid);
-        }
-
-        return Result.fail();
+            }return Result.ok(oid);
+        }return Result.fail();
     }
 
     @PostMapping("/update")

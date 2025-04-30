@@ -72,21 +72,15 @@ public class GoodController {
     @PostMapping("/add")
     public Result addGood(@RequestPart("goodInfo") GoodBean goodInfo, @RequestPart("imgFile") MultipartFile imgFile) throws IOException {
         System.err.println(goodInfo);
-
         String filename = null;
         Resource resource = resourceLoader.getResource("classpath:static/image/");
         String dest_path = resource.getFile().getAbsolutePath() + File.separator;
-
         String sql_url = "/image/avatar.jpg"; // 默认
         if (!imgFile.isEmpty()) {
             String uuid = "img" + UUID.randomUUID().toString().replaceAll("-","");
-            //获得文件后缀名
             String suffixName = imgFile.getContentType().substring(imgFile.getContentType().indexOf("/")+1);
-            //得到文件名（文件名由文件裸名与后缀名组合而成）
             filename = uuid + "." + suffixName;
-
             imgFile.transferTo(new File(dest_path + filename));
-
             sql_url = "/image/" + filename;
         }
         goodInfo.setGimage(sql_url);
